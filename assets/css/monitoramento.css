@@ -1,0 +1,100 @@
+/* Inicializando root - variaveis globais CSS */
+:root {
+    --statusOcupadoChamando: #ff0000;
+    --statusDisponivel: #04ea04;
+    --offlineIndisponivel: lightgray;
+    --statusPausado: rgb(255, 102, 0);
+    --iconeIndisponivel: rgb(90, 90, 90);
+}
+
+.cartao {
+    width: 200px;
+    height: 80px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #000;
+    float: left;
+    position: relative;
+    padding: 5px;
+    margin: 2px;
+}
+
+@keyframes piscar {
+    50% {
+        opacity: 0;
+    }
+}
+
+.icone-posicao {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.iconeCinza {
+    background-color: var(--iconeIndisponivel);
+    width: 40px;
+    height: 40px;
+    right: 40px;
+    border-radius: 50%;
+}
+
+.iconeLaranja {
+    background-color: var(--statusPausado);
+}
+
+.title-painel {
+    width: 100%;
+    background-color: rgb(229, 230, 231);
+}
+
+.title-painel h1 {
+    width: 100%;
+    text-align: center;
+}
+
+/* Tabela */
+table {
+text-align: center;
+font-family: Montserrat, Arial, sans-serif;
+background:#fafafa ;
+margin: 0 auto;
+width: 80%;
+}
+
+td[data-status='Offline-indisponivel'] {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--offlineIndisponivel);
+}
+
+td[data-status='Offline-disponivel'], td[data-status='Online-disponivel']{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--statusDisponivel);
+}
+
+td[data-status='Offline-pausa'], td[data-status='Online-pausa']{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--statusPausado);
+}
+
+td[data-status='Offline-ocupado'], td[data-status='Online-ocupado']{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--statusOcupadoChamando);
+}
+
+td[data-status='Offline-chamando'], td[data-status='Online-chamando']{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--statusOcupadoChamando);
+    animation: piscar 1s linear infinite;
+}
